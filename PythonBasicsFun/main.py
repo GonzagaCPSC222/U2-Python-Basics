@@ -171,3 +171,64 @@ def computeCircleAreaANDCircumference(radius):
 
 result1, result2 = computeCircleAreaANDCircumference(5.0)
 print(result1, result2)
+
+# warm up
+# ["a", "b", "c"], ["a", "c"] -> True, True
+# ["a", "b", "c"], ["a"] -> True, False
+
+# two params, two return values
+def has_same_first_and_last_item(list1, list2):
+    same_first = False
+    same_last = False
+    if len(list1) > 0 and len(list2) > 0:
+        if list1[0] == list2[0]:
+            same_first = True
+        if list1[-1] == list2[-1]:
+            same_last = True
+
+    return same_first, same_last
+
+same_first, same_last = has_same_first_and_last_item(["a", "b", "c"], ["a", "c"])
+print(same_first, same_last)
+same_first, same_last = has_same_first_and_last_item(["a", "b", "c"], ["c", "c"])
+print(same_first, same_last)
+same_first, same_last = has_same_first_and_last_item(["a", "b", "c"], [])
+print(same_first, same_last)
+same_first, same_last = has_same_first_and_last_item(["a", "b", "c"], ["a"])
+print(same_first, same_last)
+
+# strings
+# a string is a sequence of characters
+city = "spokane"
+print(city)
+# 0-based indexing
+print(city[0], city[-1], city[0:2])
+print(len(city))
+# string concatenation and repetition operator
+print(city + ", WA")
+city = city + ", WA" # city += ", WA"
+print(city)
+print(city * 5)
+# strings are immutable (cannot be changed)
+#city[0] = "S"
+# string comparison < <= > >= == !=
+print(city < "tacoma")
+print(city < "austin")
+print(city < "Spokane") # characters are compared one at a time from left to right using ASCII
+# 65 A 
+# 97 a
+print(city != "Spokane, WA")
+
+# methods
+city = "   \n\t   spokane \n      \n"
+# strip() removes leading and trailing whitespace characters
+print(city)
+city = city.strip()
+print(city)
+# find()
+print(city.find("p"))
+print(city.find("z"))
+
+# answering josh's q
+print("a", 3, "b", 10, sep="****")
+print("a" + str(3))
