@@ -1,3 +1,5 @@
+import random
+
 # a list is a sequence of items
 # 1D lists like a single row or a single column in Excel
 # declare a list using [ ] and a comma separated list of values
@@ -71,3 +73,71 @@ print(candies)
 # list methods 
 candies.remove("reeses")
 print(candies)
+
+# 1D list practice problem (warm-up 9/18)
+# GENERATE THE RANDOM LIST
+# make sure you import random
+rand_nums = []
+for _ in range(20):
+    rand_nums.append(random.randint(1, 10))
+
+# PRINT THE LIST ALL ON ONE LINE
+def pretty_print(nums):
+    for val in nums:
+        print(val, end=" ")
+    print() 
+
+pretty_print(rand_nums)
+
+# SORT THE LIST USING A LIST METHOD
+rand_nums.sort()
+print("after sorting")
+pretty_print(rand_nums)
+
+# PRINT LARGEST AND SMALLEST NUMBERS IN THE LIST
+print(rand_nums[0], rand_nums[-1])
+
+# DETERMINE NUMBER OF TIMES A USER-SPECIFIED NUMER IS IN LIST
+# user_val = int(input("Enter a number in [1, 10] to count: "))
+# count = 0
+# for val in rand_nums:
+#     if val == user_val:
+#         count += 1
+# print(user_val, "is in the list", count, "times")
+
+# # REMOVE ALL INSTANCES OF A USER-SPECIFIED NUMBER
+# user_val = int(input("Enter a number in [1, 10] to remove: "))
+# while user_val in rand_nums:
+#     rand_nums.remove(user_val)
+# pretty_print(rand_nums)
+
+# (more) list methods
+chips = ["doritos"]
+print(chips)
+# append
+chips.append("bbq")
+print(chips)
+# extend
+# += 
+chips.extend(["salt&vinegar", "cheetos"])
+print(chips)
+# sort
+chips.sort()
+print(chips)
+# pop (like remove, but you pass in an index)
+chip_popped = chips.pop(0)
+print("popped", chip_popped, "from", chips)
+# make a string from a list of strings
+cool_ranch = ["c", "o", "ol", " ", "ranch"]
+cool_ranch_string = "".join(cool_ranch)
+print(cool_ranch_string)
+# make a list from a string
+cool_ranch_list_of_chars = list(cool_ranch_string)
+print(cool_ranch_list_of_chars)
+# another way to make a list from a string... separate on delimiter
+chip_string2 = "cheetos,bbq,doritos" # delimiter ,
+chip_list2 = chip_string2.split(",")
+print(chip_list2)
+
+# TODO: list aliasing
+# TODO: 2D list practice problem
