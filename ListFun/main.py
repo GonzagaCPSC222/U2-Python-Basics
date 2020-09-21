@@ -139,5 +139,24 @@ chip_string2 = "cheetos,bbq,doritos" # delimiter ,
 chip_list2 = chip_string2.split(",")
 print(chip_list2)
 
-# TODO: list aliasing
+def add_one_to_each_value(some_list):
+    for i in range(len(some_list)):
+        some_list[i] += 1
+    
+# list aliasing
+list1 = [1, 2, 3]
+list2 = list1 # is list2 a copy or an alias for list1? alias!!
+list3 = list1.copy() # also look up shallow vs deep copy
+list2[0] = 100
+print(list1)
+print(list2)
+add_one_to_each_value(list1)
+print(list1)
+
+
+# when you pass a list into a function, you are making an
+# alias (parameter) for that list
+# change to the parameter persist
+# for more info... read up on pass by object reference
+
 # TODO: 2D list practice problem
