@@ -1,4 +1,4 @@
-import random
+
 
 # a list is a sequence of items
 # 1D lists like a single row or a single column in Excel

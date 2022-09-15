@@ -1,4 +1,5 @@
 import math
+import random
 
 # this is a one line commentgjfakhdfklghadkfjhg
 # a comment is used to document your code
@@ -216,6 +217,38 @@ def compute_circle_area(radius):
 result = compute_circle_area(5)
 print("result:", result)
 
+# warm up task
+def has_same_first_last_element(list1, list2):
+    same_first = False
+    same_last = False
 
+    # check the lists have at least one element
+    if len(list1) > 0 and len(list2) > 0:
+        if list1[0] == list2[0]:
+            same_first = True
+        if list1[-1] == list2[-1]:
+            same_last = True
+
+    return same_first, same_last
+
+result1, result2 = has_same_first_last_element([1, 2], [1, 3])
+print(result1, result2)
 
 # why use functions??
+# 1. reusability (define a function once, call it multiple times)
+# 2. organization (naming your code)
+
+# RANDOM NUMBERS
+# often we need random numbers for simulating random events
+# or initializing the state of an algorithm
+
+# if you want the same random numbers each time you run
+# your program, "seed" the random number generator
+random.seed(0)
+
+# lets roll a 6 sided die
+# import the random module
+roll = random.randrange(1, 7) # [1, 7)
+print("roll:", roll)
+roll = random.randint(1, 6) # [1, 6]
+print("roll:", roll)
