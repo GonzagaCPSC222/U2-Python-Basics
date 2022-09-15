@@ -150,3 +150,20 @@ print(nums)
 
 
 # Note: for practice with functions, try solving this problem using functions :)
+
+# 2D List Practice Problem
+# In ListFun, write code that generates 50 random numbers between 1 and 10
+# inclusive and puts them in a 2D list that is 10x5
+# (e.g. 10 rows and 5 columns). The program then does the following using the list:
+
+# Prints the numbers in a nice grid format (like a table)
+
+# Prints the largest and smallest number in the list
+
+# Determines the number of times a user-specified number is in the list
+
+# Removes all instances of a user-specified number in the list.
+# If the number is not in the list print the message:
+# "Sorry, your number is not here!"
+
+# Note: for practice with functions, try solving this problem using functions :)
