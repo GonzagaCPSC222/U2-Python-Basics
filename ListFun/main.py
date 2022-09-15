@@ -1,4 +1,4 @@
-
+import random
 
 # a list is a sequence of items
 # 1D lists like a single row or a single column in Excel
@@ -73,3 +73,80 @@ print(candies)
 # list methods 
 candies.remove("reeses")
 print(candies)
+
+# more on list methods
+cars = ["corolla", "lambourghini"]
+# append()
+cars.append("pilot")
+print(cars)
+# extend()
+cars.extend(["sentra", "mercedes"])
+print(cars)
+# += 
+cars2 = ["civic", "acura"]
+cars += cars2
+print(cars)
+# pop()
+cars.pop(3)
+print(cars)
+# create a string from a list of strings
+word_list = ["c", "or", "o", "lla"]
+word_str = "".join(word_list)
+print(word_str)
+# create a list from a string
+word_list2 = list(word_str)
+print(word_list2)
+comma_separated_value_str = "c,or,o,lla"
+word_list3 = comma_separated_value_str.split(",")
+print(word_list3)
+
+# 1D List Practice Problem
+# In ListFun, write code that generates 20 random numbers between
+# 1 and 10 inclusive and puts them in a 1D list.
+# The program then does the following using the list:
+nums = []
+for i in range(20):
+    rand_num = random.randint(1, 10)
+    nums.append(rand_num)
+print(nums)
+
+# Prints the numbers all one line, each number separated by a space
+for num in nums:
+    print(num, end=" ")
+print()
+
+# Sorts the list using a list method
+nums.sort() # inplace sort
+print(nums)
+# nums_copy_sorted = sorted(nums) # sorts on copy and returns sorted copy
+# print(nums)
+# print(nums_copy_sorted)
+
+# Prints the largest and smallest number in the list
+# Hint: can you take advantage of the current ordering of your list?
+print("min:", nums[0], "max:", nums[-1])
+print("min:", min(nums), "max:", max(nums))
+
+# Determines the number of times a user-specified number is in the list
+user_input = int(input("Enter a number to count: "))
+print("Count:", nums.count(user_input))
+# OR
+count = 0
+for num in nums:
+    if num == user_input:
+        count += 1
+print("Count:", count)
+
+# Removes all instances of a user-specified number in the list. 
+# If the number is not in the list print the message: 
+# "Sorry, your number is not here!"
+user_input = int(input("Enter a number to remove all occurences of: "))
+if user_input in nums:
+    while user_input in nums:
+        nums.remove(user_input)
+else:
+    print("Sorry, your number is not here!")
+print(nums)
+
+
+# Note: for practice with functions, try solving this problem using functions :)
