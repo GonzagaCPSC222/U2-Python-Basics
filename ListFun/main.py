@@ -155,6 +155,16 @@ print(nums)
 # In ListFun, write code that generates 50 random numbers between 1 and 10
 # inclusive and puts them in a 2D list that is 10x5
 # (e.g. 10 rows and 5 columns). The program then does the following using the list:
+table = []
+for i in range(10):
+    # build a row
+    row = []
+    for j in range(5):
+        # generate a random number
+        rand_num = random.randrange(1, 11)
+        row.append(rand_num)
+    table.append(row)
+print(table)
 
 # Prints the numbers in a nice grid format (like a table)
 
