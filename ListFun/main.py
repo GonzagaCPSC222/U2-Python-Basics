@@ -167,13 +167,45 @@ for i in range(10):
 print(table)
 
 # Prints the numbers in a nice grid format (like a table)
+for row in table:
+    # row is a 1D list of numbers
+    for num in row:
+        print(num, end="\t")
+    print()
 
 # Prints the largest and smallest number in the list
+# assume the first number is the smallest and the largest
+curr_min = curr_max = table[0][0]
+for row in table:
+    for value in row:
+        if value < curr_min:
+            # we have a new min
+            curr_min = value
+        if value > curr_max:
+            # we have a new max
+            curr_max = value
+print("min:", curr_min, "max:", curr_max)
 
 # Determines the number of times a user-specified number is in the list
+user_input = int(input("Enter a number to count: "))
+count = 0
+for row in table:
+    for num in row:
+        if num == user_input:
+            count += 1
+print("Count:", count)
 
 # Removes all instances of a user-specified number in the list.
 # If the number is not in the list print the message:
 # "Sorry, your number is not here!"
+user_input = int(input("Enter a number to remove all occurences of: "))
+removed = False
+for row in table:
+    while user_input in row:
+        row.remove(user_input)
+        removed = True
+if not removed:
+    print("Sorry, your number is not here!")
+print(table)
 
 # Note: for practice with functions, try solving this problem using functions :)
