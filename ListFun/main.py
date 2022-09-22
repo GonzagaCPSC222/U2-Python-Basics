@@ -248,3 +248,13 @@ print("bird" < "cat")
 # strings are compared character by characters
 # based on ASCII values
 print("bird" < "Bird")
+
+# string methods
+# like join(), split()
+# strip()
+word = "  \n  \t\t    hello   \n\n\t   "
+print(repr(word))
+word = word.strip()
+print(repr(word))
+# find()
+print(word.find("zz"))
