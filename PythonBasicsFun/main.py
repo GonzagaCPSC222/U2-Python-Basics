@@ -1,4 +1,7 @@
 import math # use code from another python module (AKA file)
+import random # GS adding after class
+from datetime import datetime
+
 # best practice: put your import statements at top of file
 print("hello")
 
@@ -78,3 +81,80 @@ for i in range(-2, 5, 2):
 # task: print the first 20 even numbers all on one line
 # separated by a comma and a space
 # 2, 4, ...., 40
+for i in range(2, 40, 2):
+    print(i, end=", ")
+print(i + 2)
+
+# while loop structure
+# while boolean condition is true:
+#    body (code we want repeated)
+#    progress towards boolean condition being false
+# task: rewrite the even number loop using a while loop
+i = 2
+while i <= 38:
+    print(i, end=", ")
+    i += 2
+print(i)
+
+# you can get an early exit from a loop with the break keyword
+# while True:
+#     user_input = input("enter a word (\"stop\" to exit): ")
+#     if user_input == "stop":
+#         break
+# print("outside the loop")
+
+# FUNCTIONS
+# a function is a named sequence of statements
+# functions can accept inputs (arguments when you call; 
+# parameters when you define the function)
+# they can return 0 or more values
+# def function_name(parameter list):
+#     body (only executes once you call the function)
+def my_print(msg_str): # header
+    """docstring
+    prepends a timestamp to the msg_str before printing
+    """
+    print(f"{datetime.now()}: {msg_str}")
+
+my_print("testing123")
+
+# task: define/call a function that accepts a radius
+# and returns the area and circumference of a circle with that radius
+
+# GS adding after class
+# no return
+def compute_circle_stats(radius):
+    area = math.pi * radius ** 2
+    circumference = 2 * math.pi * radius
+    print("area:", area, "circumference:", circumference)
+
+compute_circle_stats(5)
+
+# with return
+def compute_circle_stats2(radius):
+    area = math.pi * radius ** 2
+    circumference = 2 * math.pi * radius
+    return area, circumference # send back values to the calling code!!
+
+# unpacks return values
+area_result, circum_result = compute_circle_stats2(5)
+print("area result:", area_result, "circumference result:", circum_result)
+# doesn't unpack return values (leaves them in tuple)
+result = compute_circle_stats2(5)
+print("type(result):", type(result))
+print("result:", result, result[0], result[1])
+
+# RANDOM NUMBERS
+# often we need random numbers for simulating random events
+# or initializing the state of an algorithm
+
+# if you want the same random numbers each time you run
+# your program, "seed" the random number generator
+random.seed(0)
+
+# lets roll a 6 sided die
+# import the random module
+roll = random.randrange(1, 7) # [1, 7)
+print("roll:", roll)
+roll = random.randint(1, 6) # [1, 6]
+print("roll:", roll)
