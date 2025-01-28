@@ -134,7 +134,11 @@ compute_circle_stats(5)
 def compute_circle_stats2(radius):
     area = math.pi * radius ** 2
     circumference = 2 * math.pi * radius
-    return area, circumference # send back values to the calling code!!
+    # package into a tuple
+    return (area, circumference) # send back values to the calling code!!
+
+# tuples are immutable (can't be changed)
+# lists are mutable (can be changed)
 
 # unpacks return values
 area_result, circum_result = compute_circle_stats2(5)

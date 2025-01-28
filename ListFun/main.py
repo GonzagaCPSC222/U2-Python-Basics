@@ -73,3 +73,32 @@ print(candies)
 # list methods 
 candies.remove("reeses")
 print(candies)
+# continuing in class
+food = ["chips", "fish"]
+# append 
+food.append("pizza")
+print(food)
+# extend (for appending items in another list)
+food.extend(["cheese", "crackers"])
+print(food)
+# += list concatenate and assign
+food += candies
+print(food)
+# pop(index) for position based removal
+item = food.pop(1)
+print(item, food)
+
+# lists and strings
+# creating a string from a list of strings
+# using the string join method
+list_of_strings = ["co", "m", "pute", "r"]
+word = "julian".join(list_of_strings)
+print(word)
+# how to make a list from a string
+list_of_strings2 = list(word)
+print(list_of_strings2)
+comma_separated_word = "co,m,pute,r"
+# split is a string method
+list_of_strings3 = comma_separated_word.split(",") # default delimiter is 
+# any whitespace
+print(list_of_strings3)
