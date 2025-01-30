@@ -102,3 +102,43 @@ comma_separated_word = "co,m,pute,r"
 list_of_strings3 = comma_separated_word.split(",") # default delimiter is 
 # any whitespace
 print(list_of_strings3)
+
+# LIST ALIASING
+def add_one_to_each_element(nums_list):
+    nums_list = []
+    for i in range(len(nums_list)):
+        nums_list[i] += 1
+
+list1 = [1, 2, 3, 4]
+list2 = [1, 2, 3, 4]
+# list2 is a different list object from list1 (though they have the same values)
+list1[0] = 10
+print(list1, list2)
+list3 = list1
+# list3 is an "alias" for the same object that list1 refers to
+list3[0] = 100
+print(list1, list2, list3)
+add_one_to_each_element(list1) # nums_list will be an alias for list1's object
+print("after call:", list1, list2, list3)
+# to make a copy of a 1D list: use the list copy() method
+list4 = list1.copy() # "shallow" copy
+list1[0] = 10000
+print(list1, list2, list3, list4)
+# python is pass by object reference
+# functions with a reference to an object passed in
+# can modify the object
+
+# a few more words about strings
+# strings are immutable (cannot be changed)
+# they support 0-based indexing and slicing
+# they have methods, like split() and join()
+# strip()
+word = "  \t   \n\n  basketball\n   \n"
+print(word)
+print(repr(word))
+word = word.strip()
+print(repr(word))
+# find()
+print(word.find("et"))
+print(word.find("k"))
+print(word.find("z"))
